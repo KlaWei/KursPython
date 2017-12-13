@@ -111,6 +111,8 @@ class Contacts(Gtk.Window):
         self.append_to_liststore_from_database(self.database.get_entries())
 
     def move_info_to_text_entries(self, treeview, path, col):
+        """Row activated signal handler"""
+        
         self.editEntry = True
         selection = treeview.get_selection()
         (model, t_iter) = selection.get_selected()
@@ -133,5 +135,5 @@ class Contacts(Gtk.Window):
 
 
 if __name__ == "__main__":
-    app = Contacts()
+    Contacts()
     Gtk.main()
